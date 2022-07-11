@@ -16,5 +16,5 @@ def classify_image(pixels):
 			args += "(setv b{}_{} {})".format(x, y, pixels[y][x])
 	
 	prog = args + data
-	expr = hy.read_str(f"((fn [] {prog}))")
+	expr = hy.read(f"((fn [] {prog}))")
 	return hy.eval(expr)
